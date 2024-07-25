@@ -1,0 +1,9 @@
+recursive-include src *.py
+recursive-include tests *.py
+include .gitignore
+include environment.yml
+include LICENSE.txt
+include MANIFEST.in
+include pyproject.toml
+include README.md
+include tox.ini
