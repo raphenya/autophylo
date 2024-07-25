@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autophylo"
+description = "Autophylo is used to generate phylogentic trees automatically."
+version = "1.0.0"
+dependencies = [
+  "joblib",
+  "biopython"
+]
+authors = [
+  { name="Amogelang R. Raphenya", email="raphenar@mcmaster.ca" },
+]
+maintainers = [
+  {name = "Amogelang R. Raphenya", email = "raphenar@mcmaster.ca"}
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+keywords = ["phylogentic", "autophy", "automatic", "autophylo"]
+
+[project.scripts]
+autophylo = "autophylo:autophylo.main"
+
+[project.urls]
+Homepage = "https://github.com/raphenya/autophylo"
+Issues = "https://github.com/raphenya/autophylo/issues"

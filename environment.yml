@@ -1,0 +1,15 @@
+name: autophylo
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python 3.11.3
+  - fasttree 2.1.11
+  - blast 2.15.0
+  - muscle 5.1.0
+  - raxml 8.2.13
+  - gblocks 0.91b
+  - usearch 12.0_beta
+  - seqkit 2.8.2
+  - trimal 1.5.0
