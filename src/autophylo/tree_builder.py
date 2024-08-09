@@ -1,10 +1,4 @@
-'''
-pip3 install joblib
-pip3 install biopython
-pip3 install seqkit or
-wget https://github.com/shenwei356/seqkit/releases/download/v2.0.0/seqkit_linux_386.tar.gz
-'''
-import sys, os, glob,json, logging, gzip, bz2, csv#, zlib
+import sys, os, glob,json, logging, gzip, bz2, csv
 from Bio import SeqIO
 from joblib import Parallel, delayed
 import math, re
@@ -20,7 +14,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(level)
 
 # detailed log
-# formatter = logging.Formatter('%(levelname)s %(asctime)s : (%(filename)s::%(funcName)s::%(lineno)d) : %(message)s')
+# formatter = logging.Formatter('%(levelname)s %(asctime)s : \
+    # (%(filename)s::%(funcName)s::%(lineno)d) : %(message)s')
 # basic log
 formatter = logging.Formatter('%(levelname)s %(asctime)s : %(message)s')
 
@@ -53,7 +48,7 @@ GBLOCKS = config["CLUSTERING"]["GBLOCKS"]
 USEARCH = config["CLUSTERING"]["USEARCH"]
 BLASTDB = config["DATABASES"]["BLASTDB"]
 TAXIDS = config["DATABASES"]["TAXIDS"]
-    
+
 def is_fasta(input_sequence,extension=""):
 	"""Checks for valid fasta format."""
 	if extension == "":
@@ -383,17 +378,15 @@ def sampling_hmmer_curl(input_sequence,output_file,threads=1):
 		os.system("wget https://www.uniprot.org/uniprot/{accession}.fasta -O ->> {output}.fasta".format(accession=hit["acc"], output=output_file ))
 
 
-def sampling_MMseqs2(input_sequence,output_file,sample_size,threads,skip_taxids,percent_positive_scoring,percent_identity, skip_blast, specific_taxa):
-	# check database or create dbs
-	"""
-	mamba install -c conda-forge -c bioconda mmseqs2
-	mmseqs databases <name> <o:sequenceDB> <tmpDir> [options]
-	mmseqs databases UniProtKB/Swiss-Prot swissprot tmp
-	mmseqs databases NR nr ./tmp
+# def sampling_MMseqs2(input_sequence,output_file,sample_size,threads,skip_taxids,percent_positive_scoring,percent_identity, skip_blast, specific_taxa):
+# 	# check database or create dbs
+# 	"""
+# 	mamba install -c conda-forge -c bioconda mmseqs2
+# 	mmseqs databases <name> <o:sequenceDB> <tmpDir> [options]
+# 	mmseqs databases UniProtKB/Swiss-Prot swissprot tmp
+# 	mmseqs databases NR nr ./tmp
 
-	"""
-	# sample
-	pass
+# 	"""
 
 def get_average_length(input_sequence):
 	sequences = (fasta.seq for fasta in SeqIO.parse(open(input_sequence), "fasta"))
@@ -662,7 +655,7 @@ def clean():
 def main(args):
     if args.debug:
         logger.setLevel(10)
-        logger.info(json.dumps(args,indent=2))
+        # logger.info(json.dumps(args,indent=2))
     # load config
     add_line("LOAD CONFIG FILE")
     logger.info(f'{MUSCLE}')
@@ -674,7 +667,7 @@ def main(args):
     logger.info(f'{USEARCH}')
     logger.info(f'{BLASTDB}')
     logger.info(f'{TAXIDS}')
-     
+    
     # check require programs
     add_line("CHECK REQUIRED PROGRAMS")
     check_required_programs()
@@ -823,9 +816,9 @@ def main(args):
         os.system(cmd)
     else:
         logger.info("skipping ML tree ...")
-        
+    
     if args.clean:
         add_line("CLEAN TEMPORARY FILES")
         clean()
-    
+
     logger.info("Done.")
