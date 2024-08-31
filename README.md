@@ -1,6 +1,6 @@
-# The Automatic Phylogentic Tree Builder
+# The Automatic Phylogenetic Tree Builder
 
-The **Auto**matic **Phylo**gentic (AutoPhylo) is used to generate phylogentic trees automatically by sampling the selected database (e.g., NCBI nr) and performs all tasks associated with traditional phylogentic tree building which includes trimming, dropping overly similar sequences, and generating an maximum likelihood (ML) tree using RAxML.
+The **Auto**matic **Phylo**genetic (AutoPhylo) is used to generate phylogenetic trees automatically by sampling the selected database (e.g., NCBI nr) and performs all tasks associated with traditional phylogenetic tree building which includes trimming, dropping overly similar sequences, and generating an maximum likelihood (ML) tree using RAxML.
 
 The user provides one protein sequence or multiple sequences and blast databases are used to sample sequences
 from phyla selected by the user e.g., The following can be used for phyla found in the human gut i.e., *Actinobacteriota*, *Bacteroidota*, *Desulfobacterota*, *Firmicutes*, *Proteobacteria*, *Synergistota*, *Verrucomicrobiota*, *Fusobacteria*.
