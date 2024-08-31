@@ -1,5 +1,6 @@
 recursive-include src *.py
 recursive-include tests *.py
+recursive-include docs *.png
 include .gitignore
 include environment.yml
 include LICENSE.txt
