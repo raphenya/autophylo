@@ -13,8 +13,9 @@ test_env/
 build-install.sh
 BUILD.md
 run-test.sh
-config
 
+# twine
+.pypirc
 
 # due to using tox and pytest
 .tox

@@ -7,3 +7,4 @@ include MANIFEST.in
 include pyproject.toml
 include README.md
 include tox.ini
+recursive-include config *.conf
