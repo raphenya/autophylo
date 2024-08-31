@@ -5,6 +5,8 @@ The **Auto**matic **Phylo**gentic (AutoPhylo) is used to generate phylogentic tr
 The user provides one protein sequence or multiple sequences and blast databases are used to sample sequences
 from phyla selected by the user e.g., The following can be used for phyla found in the human gut i.e., *Actinobacteriota*, *Bacteroidota*, *Desulfobacterota*, *Firmicutes*, *Proteobacteria*, *Synergistota*, *Verrucomicrobiota*, *Fusobacteria*.
 
+![autophylo overview](https://github.com/raphenya/autophylo/blob/master/docs/images/Phylogenetic_Tree_Building.trimmed.pdf?raw=true)
+
 # Installation
 
 The tool requires Python >= 3.11 and conda >= 4.12.0. The latest release can be installed directly from pip or this repository.
