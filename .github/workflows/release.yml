@@ -28,3 +28,4 @@ jobs:
         skip-existing: true
         user: __token__
         password: ${{ secrets.PYPY_KEY }}
+        repository-url: https://upload.pypi.org/legacy/
